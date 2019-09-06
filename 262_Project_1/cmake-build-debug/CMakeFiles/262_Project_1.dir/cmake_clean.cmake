@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/262_Project_1.dir/personality_test.cpp.o"
-  "CMakeFiles/262_Project_1.dir/proj1.cpp.o"
+  "CMakeFiles/262_Project_1.dir/personality_test.cpp.obj"
+  "CMakeFiles/262_Project_1.dir/proj1.cpp.obj"
   "262_Project_1.pdb"
-  "262_Project_1"
+  "262_Project_1.exe"
+  "262_Project_1.exe.manifest"
+  "lib262_Project_1.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

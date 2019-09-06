@@ -96,8 +96,9 @@ void personality_test::run_test() {
     //Uncomment below as you comeplete them
     //Feel free to add any other methods to call
 
-    //string output = analyzePersonality();
-    //categorizeOutput(output);
+    string output = analyze_personality();
+    cout << output <<  endl;
+    categorize_output(output);
 }
 
 /* Analyze Personality Method
@@ -109,7 +110,156 @@ void personality_test::run_test() {
  */
 string personality_test::analyze_personality() {
     //TODO
+    string userAnswer = "";
+    for (int i = 0; i < questions.size(); i ++)
+    {
+
+        cout << "Question: " << questions[i].question << endl;
+        while (true)
+        {
+            cin >> userAnswer;
+            if (userAnswer == "y")
+            {
+                // Yes result
+                if (questions[i].categoryId == '1')
+                {
+                    if (questions[i].yesAnswer == 'I')
+                    {
+                        cateory1[0] ++;
+                    }
+                    if (questions[i].yesAnswer == 'E')
+                    {
+                        cateory1[1] ++;
+                    }
+                }
+                else if (questions[i].categoryId == '2')
+                {
+                    if (questions[i].yesAnswer == 'S')
+                    {
+                        cateory2[0] ++;
+                    }
+                    if (questions[i].yesAnswer == 'N')
+                    {
+                        cateory2[1] ++;
+                    }
+                }
+                else if (questions[i].categoryId == '3')
+                {
+                    if (questions[i].yesAnswer == 'T')
+                    {
+                        cateory3[0] ++;
+                    }
+                    if (questions[i].yesAnswer == 'F')
+                    {
+                        cateory3[1] ++;
+                    }
+                }
+                else if (questions[i].categoryId == '4')
+                {
+                    if (questions[i].yesAnswer == 'J')
+                    {
+                        cateory4[0] ++;
+                    }
+                    if (questions[i].yesAnswer == 'P')
+                    {
+                        cateory4[1] ++;
+                    }
+                }
+                break;
+            } else if (userAnswer == "n")
+            {
+                // No result
+                if (questions[i].categoryId == '1')
+                {
+                    if (questions[i].noAnswer == 'I')
+                    {
+                        cateory1[0] ++;
+                    }
+                    if (questions[i].noAnswer == 'E')
+                    {
+                        cateory1[1] ++;
+                    }
+                }
+                else if (questions[i].categoryId == '2')
+                {
+                    if (questions[i].noAnswer == 'S')
+                    {
+                        cateory2[0] ++;
+                    }
+                    if (questions[i].noAnswer == 'N')
+                    {
+                        cateory2[1] ++;
+                    }
+                }
+                else if (questions[i].categoryId == '3')
+                {
+                    if (questions[i].noAnswer == 'T')
+                    {
+                        cateory3[0] ++;
+                    }
+                    if (questions[i].noAnswer == 'F')
+                    {
+                        cateory3[1] ++;
+                    }
+                }
+                else if (questions[i].categoryId == '4')
+                {
+                    if (questions[i].noAnswer == 'J')
+                    {
+                        cateory4[0] ++;
+                    }
+                    if (questions[i].noAnswer == 'P')
+                    {
+                        cateory4[1] ++;
+                    }
+                }
+                break;
+            }
+            else
+                {
+                    cout << "Sorry, I didn't recognize your input, please type again" << endl;
+                }
+        }
+
+
+    }
     string output = "";
+
+    if (cateory1[0] > cateory1[1])
+    {
+        output += "I";
+    }
+    else if (cateory1[0] < cateory1[1])
+    {
+        output += "E";
+    }
+
+    if (cateory2[0] > cateory2[1])
+    {
+        output += "S";
+    }
+    else if (cateory2[0] < cateory2[1])
+    {
+        output += "N";
+    }
+
+    if (cateory3[0] > cateory3[1])
+    {
+        output += "T";
+    }
+    else if (cateory3[0] < cateory3[1])
+    {
+        output += "F";
+    }
+
+    if (cateory4[0] > cateory4[1])
+    {
+        output += "J";
+    }
+    else if (cateory4[0] < cateory4[1])
+    {
+        output += "P";
+    }
     return output;
 }
 
@@ -121,6 +271,34 @@ string personality_test::analyze_personality() {
  */
 void personality_test::categorize_output(string my_personality) {
     //TODO
+    string fileLine = "";
+    ifstream analyseFile("analysis.txt");
+    if (analyseFile.fail())
+    {
+        cout << "Error loading analysis file" << endl;
+    }
+    while (!analyseFile.eof())
+    {
+        result analysisObj;
+
+        analyseFile >> analysisObj.personalityType >> analysisObj.category >> analysisObj.type;
+        getline(analyseFile, analysisObj.description);
+        results.push_back(analysisObj);
+        cout << "Pushing back" << endl;
+
+    }
+    for (int i =0; i < results.size(); i++)
+    {
+        if (my_personality == results[i].personalityType)
+        {
+            cout << "Your personality type is: " << results[i].personalityType << endl;
+            cout << "The category is: " << results[i].category << endl;
+            cout << "You are: The " << results[i].type << endl;
+            cout << "Description: " << results[i].description << endl;
+        }
+    }
+
+
 }
 
 /* Save Output
@@ -129,6 +307,18 @@ void personality_test::categorize_output(string my_personality) {
  * @param string (the thing to write)
  * @return None, creates a file
  */
-void personality_test::save_output(string output) {
-    //TODO
+void personality_test::save_output(string output)
+{
+    cout << "Would you like to save the file y/n" << endl;
+    string input =  "";
+    cin >> input;
+    if (input == "y")
+    {
+        ofstream saveFile;
+        string saveFileName;
+        cout << "Please enter file name" << endl;
+        cin >> saveFileName;
+        saveFile.open(saveFileName);
+    }
+
 }

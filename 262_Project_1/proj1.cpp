@@ -24,7 +24,7 @@ int main () {
     // Uncomment the below methods as you complete them
     load_file(test);
     test.printout();
-    //test.run_test();
+    test.run_test();
 
 }
 

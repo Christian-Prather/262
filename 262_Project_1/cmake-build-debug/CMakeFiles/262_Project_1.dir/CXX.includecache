@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/christian/CLionProjects/262_Project_1/personality_test.cpp
+C:/Users/clems/Documents/GitHub/262/262_Project_1/personality_test.cpp
 iostream
 -
 string
@@ -18,9 +18,9 @@ vector
 sstream
 -
 personality_test.h
-/home/christian/CLionProjects/262_Project_1/personality_test.h
+C:/Users/clems/Documents/GitHub/262/262_Project_1/personality_test.h
 
-/home/christian/CLionProjects/262_Project_1/personality_test.h
+C:/Users/clems/Documents/GitHub/262/262_Project_1/personality_test.h
 string
 -
 vector

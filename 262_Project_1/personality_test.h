@@ -16,6 +16,16 @@ public:
 private:
 
 };
+
+class result
+{
+    public:
+        string personalityType;
+        string category;
+        string type;
+        string description;
+
+};
 // personality test class
 class personality_test {
     public:
@@ -28,6 +38,26 @@ class personality_test {
         // Add anything you may need
         void set_question(question &);
         question get_question(int);
+        int extrovertScore = 0;
+        int introvertScore = 0;
+        int sensingScore = 0;
+        int intuitionScore = 0;
+        int thinkingScore = 0;
+        int feelingScore = 0;
+        int judgingScore = 0;
+        int perceivingScore = 0;
+
+        int cateory1[2] = {0,0};
+        int cateory2[2] = {0,0};
+        int cateory3[2] = {0,0};
+        int cateory4[2] = {0,0};
+
+        vector<result> results;
+
+
+
+
+
 
 
 private:
