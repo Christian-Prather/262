@@ -13,21 +13,40 @@ using namespace std;
  * Input: istream object
  * Output: Boolean
  */
+void personality_test::clearQuestions()
+{
+    // Clear all variables for repeat use
+    questions.clear();
+    for (int i =0; i < 2; i ++)
+    {
+        cateory4[i] = 0;
+        cateory3[i] = 0;
+        cateory2[i] = 0;
+        cateory1[i] = 0;
+
+    }
+
+
+}
 void personality_test::set_question(question & item)
 {
+    //Setter
     questions.push_back(item);
 }
 
 question personality_test::get_question(int index)
 {
+    //Getter unused but paired with setter
     return questions[index];
 }
 
-bool personality_test::load(istream &in) {
-    //TODO
+bool personality_test::load(istream &in)
+{
+
     cout << "called load" << endl;
     string tmp ="";
     vector<string> storage;
+    storage.clear();
 
 
     while(!in.eof())
@@ -39,8 +58,7 @@ bool personality_test::load(istream &in) {
     // Throw out first line
     storage.erase(storage.begin());
     storage.resize(storage.size() -1); // Remove last unformatted line
-    cout << storage[12] << endl;
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < storage.size(); i++)
     {
         cout << storage.size() << i <<endl;
         tmp = storage[i];
@@ -62,11 +80,10 @@ bool personality_test::load(istream &in) {
         tmp_question.categoryId = tmp.front();
         tmp_question.yesAnswer = tmp[2];
         tmp_question.noAnswer = tmp[4];
-//        cout << tmp_question.categoryId << endl;
-
         tmp_question.question = tmp.substr(6);
         set_question(tmp_question);
     }
+
 
     return true;
 }
@@ -76,11 +93,11 @@ bool personality_test::load(istream &in) {
  * 1) Printout the questions to ensure that the load method was written correctly
  * This part will not be graded, just for your own check
  */
-void personality_test::printout() {
-    //TODO
+void personality_test::printout()
+{
+
     cout << "called printout" << endl;
-    cout << sizeof(questions);
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < questions.size(); i++)
     {
         cout << "Question " << questions[i].question << " ID "<< questions[i].categoryId << " YES "<<questions[i].yesAnswer << " NO "<<questions[i].noAnswer << endl;
     }
@@ -92,13 +109,12 @@ void personality_test::printout() {
  * @param: None
  * @return: None, Text to Console
  */
-void personality_test::run_test() {
-    //Uncomment below as you comeplete them
-    //Feel free to add any other methods to call
-
+void personality_test::run_test()
+{
     string output = analyze_personality();
     cout << output <<  endl;
     categorize_output(output);
+    save_output(output);
 }
 
 /* Analyze Personality Method
@@ -108,16 +124,35 @@ void personality_test::run_test() {
  * @param None
  * @return string
  */
-string personality_test::analyze_personality() {
-    //TODO
+string personality_test::analyze_personality()
+{
+
+    string yesOptions[] = {"Y", "y", "yes", "Yes", "YES"};
+    string noOptions[] = {"N", "n", "no", "No", "NO"};
     string userAnswer = "";
+
+
     for (int i = 0; i < questions.size(); i ++)
     {
-
         cout << "Question: " << questions[i].question << endl;
+        // Check for which category the asked question belongs to and store in mapped array
         while (true)
         {
             cin >> userAnswer;
+            for (auto answer : yesOptions)
+            {
+                if (answer == userAnswer)
+                {
+                    userAnswer = "y";
+                }
+            }
+            for (auto answer : noOptions)
+            {
+                if (answer == userAnswer)
+                {
+                    userAnswer = "n";
+                }
+            }
             if (userAnswer == "y")
             {
                 // Yes result
@@ -269,8 +304,8 @@ string personality_test::analyze_personality() {
  * @param Personality type string (eg. "ENFJ")
  * @return None, Text to console
  */
-void personality_test::categorize_output(string my_personality) {
-    //TODO
+void personality_test::categorize_output(string my_personality)
+{
     string fileLine = "";
     ifstream analyseFile("analysis.txt");
     if (analyseFile.fail())
@@ -285,20 +320,23 @@ void personality_test::categorize_output(string my_personality) {
         getline(analyseFile, analysisObj.description);
         results.push_back(analysisObj);
         cout << "Pushing back" << endl;
-
     }
+
     for (int i =0; i < results.size(); i++)
     {
         if (my_personality == results[i].personalityType)
         {
+            cout << endl;
+            cout << "+++++++++++++++++++++++++"<<endl;
             cout << "Your personality type is: " << results[i].personalityType << endl;
             cout << "The category is: " << results[i].category << endl;
             cout << "You are: The " << results[i].type << endl;
             cout << "Description: " << results[i].description << endl;
+            cout << "+++++++++++++++++++++++++"<<endl;
+
         }
     }
-
-
+analyseFile.close();
 }
 
 /* Save Output
@@ -312,13 +350,38 @@ void personality_test::save_output(string output)
     cout << "Would you like to save the file y/n" << endl;
     string input =  "";
     cin >> input;
-    if (input == "y")
+    while (true)
     {
-        ofstream saveFile;
-        string saveFileName;
-        cout << "Please enter file name" << endl;
-        cin >> saveFileName;
-        saveFile.open(saveFileName);
+        if (input == "y")
+        {
+            ofstream saveFile;
+            string saveFileName;
+            cout << "Please enter file name" << endl;
+            cin >> saveFileName;
+            saveFile.open(saveFileName);
+            for (int i =0; i < results.size(); i++)
+            {
+                if (output == results[i].personalityType)
+                {
+                    saveFile << "Your personality type is: " << results[i].personalityType << endl;
+                    saveFile << "The category is: " << results[i].category << endl;
+                    saveFile << "You are: The " << results[i].type << endl;
+                    saveFile << "Description: " << results[i].description << endl;
+                }
+            }
+            saveFile.close();
+            break;
+        }
+        else if (input == "n")
+        {
+            break;
+        }
+        else
+        {
+            cout << "Not valid input" << endl;
+        }
     }
-
 }
+
+
+

@@ -37,15 +37,9 @@ class personality_test {
         void save_output(string);
         // Add anything you may need
         void set_question(question &);
+        void clearQuestions();
         question get_question(int);
-        int extrovertScore = 0;
-        int introvertScore = 0;
-        int sensingScore = 0;
-        int intuitionScore = 0;
-        int thinkingScore = 0;
-        int feelingScore = 0;
-        int judgingScore = 0;
-        int perceivingScore = 0;
+
 
         int cateory1[2] = {0,0};
         int cateory2[2] = {0,0};

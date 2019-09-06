@@ -14,7 +14,8 @@ void load_file(personality_test&);
  * @param None
  * @return None, Text to Console
  */
-int main () {
+int main ()
+{
     cout << "====================================" << endl;
     cout << "Welcome to CSCI262 Personality Test!" << endl;
     cout << "====================================" << endl << endl;
@@ -25,8 +26,30 @@ int main () {
     load_file(test);
     test.printout();
     test.run_test();
+    while (true)
+    {
+        cout << "Would you like to play again? y/n" << endl;
+        string decision = "";
+        cin >> decision;
+        if (decision == "y")
+        {
+
+            test.clearQuestions();
+            load_file(test);
+            test.printout();
+            test.run_test();
+        } else if (decision == "n")
+        {
+            break;
+        } else{
+            cout << "Not supported input" << endl;
+        }
+
+    }
 
 }
+
+
 
 /* Load File Method
  * 1) Prompt the user for a file name. 
@@ -39,7 +62,7 @@ int main () {
 void load_file(personality_test& test)
 {
     ifstream file;
-    string fileName;
+    string fileName = "";
 
     while (true)
     {
@@ -62,4 +85,5 @@ void load_file(personality_test& test)
         cout << "Input file " << fileName << " appears to not be a proper file!" << endl;
         load_file(test);
     }
+    file.close();
 }
