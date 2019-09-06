@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/christian/CLionProjects/262_Project_1/personality_test.cpp
+iostream
+-
+string
+-
+fstream
+-
+vector
+-
+sstream
+-
+personality_test.h
+/home/christian/CLionProjects/262_Project_1/personality_test.h
+
+/home/christian/CLionProjects/262_Project_1/personality_test.h
+string
+-
+vector
+-
+iostream
+-
+
