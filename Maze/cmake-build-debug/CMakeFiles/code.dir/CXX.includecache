@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/christian/262/Maze/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+maze_solver.h
+/home/christian/262/Maze/maze_solver.h
+
+/home/christian/262/Maze/maze_solver.cpp
+maze_solver.h
+/home/christian/262/Maze/maze_solver.h
+iostream
+-
+fstream
+-
+string
+-
+
+/home/christian/262/Maze/maze_solver.h
+iostream
+-
+vector
+-
+stack
+-
+queue
+-
+
