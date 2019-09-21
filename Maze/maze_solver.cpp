@@ -68,7 +68,7 @@ void maze_solver::_print_maze()
 */
 void maze_solver::_initialize()
 {
-	// TODO: write this method
+	// loop through every row and every column looking for the starting
 	for (int i = 0; i < _rows; i ++ )
     {
 	    for (int j =0; j < _columns; j++)
@@ -140,77 +140,94 @@ void maze_solver::_initialize()
 */
 void maze_solver::_step()
 {
-	// TODO: write this method
+
+    // _maze structure  = [####], [#...o#], [#####]
+	// Check id using stack or que
 	if (_use_stack)
     {
-	    if (_stackTracker.empty())
+	    // If empty done exit
+        if (_stackTracker.empty())
         {
-	        _no_more_steps = true;
+            _no_more_steps = true;
             return;
         }
-	    point testPoint = _stackTracker.top();
-	    _stackTracker.pop();
+        //Get top point
+        point testPoint = _stackTracker.top();
+        _stackTracker.pop();
+        // Check if its the end
         if (testPoint.identifier == '*')
         {
-	        _goal_reached = true;
-	        _no_more_steps = true;
+            _goal_reached = true;
+            _no_more_steps = true;
             return;;
         }
-	    if (testPoint.identifier != 'o') {
-            _maze[testPoint.x][testPoint.y] = '@';
-            int currentX = testPoint.x;
-            int currentY = testPoint.y;
-        }
-	        // Check all 4 sides and stack them
-        if (testPoint.identifier == '@')
+
+        // Have I already checked this point
+        if (_maze[testPoint.x][testPoint.y] == '@' | testPoint.identifier == '@')
         {
             _stackTracker.pop();
-        }
 
-	        //Right
-	        if ( testPoint.y +1 < _columns && _maze[testPoint.x][testPoint.y +1] != '@' && _maze[testPoint.x][testPoint.y+1] != '#' && _maze[testPoint.x][testPoint.y+1] != 'o'  )
+        }
+        //If not check four surrounding points
+        else
+        {
+            if (testPoint.identifier != 'o')
             {
-	            point newPoint;
-	            newPoint.x = testPoint.x;
-	            newPoint.y = testPoint.y+1;
-	            newPoint.identifier = _maze[testPoint.x][testPoint.y+1];
-	            _stackTracker.push(newPoint);
+                _maze[testPoint.x][testPoint.y] = '@';
+                int currentX = testPoint.x;
+                int currentY = testPoint.y;
             }
-	        // Left
-            if (testPoint.y -1 >= 0 &&_maze[testPoint.x][testPoint.y-1] != '@' && _maze[testPoint.x][testPoint.y-1] != '#' && _maze[testPoint.x][testPoint.y-1] != 'o' )
+
+            //Right
+            if (testPoint.y + 1 < _columns && _maze[testPoint.x][testPoint.y + 1] != '@' &&
+                _maze[testPoint.x][testPoint.y + 1] != '#' && _maze[testPoint.x][testPoint.y + 1] != 'o')
             {
                 point newPoint;
                 newPoint.x = testPoint.x;
-                newPoint.y = testPoint.y-1;
-                newPoint.identifier = _maze[testPoint.x][testPoint.y -1];
+                newPoint.y = testPoint.y + 1;
+                newPoint.identifier = _maze[testPoint.x][testPoint.y + 1];
+                _stackTracker.push(newPoint);
+            }
+            // Left
+            if (testPoint.y - 1 >= 0 && _maze[testPoint.x][testPoint.y - 1] != '@' &&
+                _maze[testPoint.x][testPoint.y - 1] != '#' && _maze[testPoint.x][testPoint.y - 1] != 'o')
+            {
+                point newPoint;
+                newPoint.x = testPoint.x;
+                newPoint.y = testPoint.y - 1;
+                newPoint.identifier = _maze[testPoint.x][testPoint.y - 1];
                 _stackTracker.push(newPoint);
 
             }
             //Up
-            if (testPoint.x -1 >= 0 &&_maze[testPoint.x -1][testPoint.y] != '@' && _maze[testPoint.x-1][testPoint.y] != '#' && _maze[testPoint.x-1][testPoint.y] != 'o' )
+            if (testPoint.x - 1 >= 0 && _maze[testPoint.x - 1][testPoint.y] != '@' &&
+                _maze[testPoint.x - 1][testPoint.y] != '#' && _maze[testPoint.x - 1][testPoint.y] != 'o')
             {
                 point newPoint;
-                newPoint.x = testPoint.x-1;
+                newPoint.x = testPoint.x - 1;
                 newPoint.y = testPoint.y;
-                newPoint.identifier = _maze[testPoint.x -1][testPoint.y];
+                newPoint.identifier = _maze[testPoint.x - 1][testPoint.y];
                 _stackTracker.push(newPoint);
             }
             // Down
-            if (testPoint.x +1 < _rows && _maze[testPoint.x+1][testPoint.y] != '@' && _maze[testPoint.x+1][testPoint.y] != '#' && _maze[testPoint.x+1][testPoint.y] != 'o' )
+            if (testPoint.x + 1 < _rows && _maze[testPoint.x + 1][testPoint.y] != '@' &&
+                _maze[testPoint.x + 1][testPoint.y] != '#' && _maze[testPoint.x + 1][testPoint.y] != 'o')
             {
                 point newPoint;
-                newPoint.x = testPoint.x +1;
+                newPoint.x = testPoint.x + 1;
                 newPoint.y = testPoint.y;
-                newPoint.identifier = _maze[testPoint.x+1][testPoint.y];
+                newPoint.identifier = _maze[testPoint.x + 1][testPoint.y];
                 _stackTracker.push(newPoint);
             }
-
+        }
 
 
 
     }
 	else
     {
+        // See above for description
+
         if (_queTracker.empty())
         {
             _no_more_steps = true;
@@ -224,59 +241,64 @@ void maze_solver::_step()
             _no_more_steps = true;
             return;;
         }
-        if (testPoint.identifier != 'o') {
-            _maze[testPoint.x][testPoint.y] = '@';
-            int currentX = testPoint.x;
-            int currentY = testPoint.y;
-        }
-        // Check all 4 sides and stack them
-        if (testPoint.identifier == '@')
+
+
+        if (_maze[testPoint.x][testPoint.y] == '@' | testPoint.identifier == '@')
         {
             _queTracker.pop();
-        }
-
-//        if (_maze[testPoint.x][testPoint.y] == '@')
-//        {
-//            _queTracker.pop();
-//        }
-        //Right
-        if ( testPoint.y +1 < _columns && _maze[testPoint.x][testPoint.y +1] != '@' && _maze[testPoint.x][testPoint.y+1] != '#' && _maze[testPoint.x][testPoint.y+1] != 'o'  )
-        {
-            point newPoint;
-            newPoint.x = testPoint.x;
-            newPoint.y = testPoint.y+1;
-            newPoint.identifier = _maze[testPoint.x][testPoint.y+1];
-            _queTracker.push(newPoint);
-        }
-        // Left
-        if (testPoint.y -1 >= 0 &&_maze[testPoint.x][testPoint.y-1] != '@' && _maze[testPoint.x][testPoint.y-1] != '#' && _maze[testPoint.x][testPoint.y-1] != 'o' )
-        {
-            point newPoint;
-            newPoint.x = testPoint.x;
-            newPoint.y = testPoint.y-1;
-            newPoint.identifier = _maze[testPoint.x][testPoint.y -1];
-            _queTracker.push(newPoint);
 
         }
-        //Up
-        if (testPoint.x -1 >= 0 &&_maze[testPoint.x -1][testPoint.y] != '@' && _maze[testPoint.x-1][testPoint.y] != '#' && _maze[testPoint.x-1][testPoint.y] != 'o' )
+        else
         {
-            point newPoint;
-            newPoint.x = testPoint.x-1;
-            newPoint.y = testPoint.y;
-            newPoint.identifier = _maze[testPoint.x -1][testPoint.y];
-            _queTracker.push(newPoint);
-        }
-        // Down
-        if (testPoint.x +1 < _rows && _maze[testPoint.x+1][testPoint.y] != '@' && _maze[testPoint.x+1][testPoint.y] != '#' && _maze[testPoint.x+1][testPoint.y] != 'o' )
-        {
-            point newPoint;
-            newPoint.x = testPoint.x +1;
-            newPoint.y = testPoint.y;
-            newPoint.identifier = _maze[testPoint.x+1][testPoint.y];
-            _queTracker.push(newPoint);
-        }
+            if (testPoint.identifier != 'o')
+            {
+                _maze[testPoint.x][testPoint.y] = '@';
+                int currentX = testPoint.x;
+                int currentY = testPoint.y;
+            }
 
+            //Right
+            if (testPoint.y + 1 < _columns && _maze[testPoint.x][testPoint.y + 1] != '@' &&
+                _maze[testPoint.x][testPoint.y + 1] != '#' && _maze[testPoint.x][testPoint.y + 1] != 'o')
+            {
+                point newPoint;
+                newPoint.x = testPoint.x;
+                newPoint.y = testPoint.y + 1;
+                newPoint.identifier = _maze[testPoint.x][testPoint.y + 1];
+                _queTracker.push(newPoint);
+            }
+            // Left
+            if (testPoint.y - 1 >= 0 && _maze[testPoint.x][testPoint.y - 1] != '@' &&
+                _maze[testPoint.x][testPoint.y - 1] != '#' && _maze[testPoint.x][testPoint.y - 1] != 'o')
+            {
+                point newPoint;
+                newPoint.x = testPoint.x;
+                newPoint.y = testPoint.y - 1;
+                newPoint.identifier = _maze[testPoint.x][testPoint.y - 1];
+                _queTracker.push(newPoint);
+
+            }
+            //Up
+            if (testPoint.x - 1 >= 0 && _maze[testPoint.x - 1][testPoint.y] != '@' &&
+                _maze[testPoint.x - 1][testPoint.y] != '#' && _maze[testPoint.x - 1][testPoint.y] != 'o')
+            {
+                point newPoint;
+                newPoint.x = testPoint.x - 1;
+                newPoint.y = testPoint.y;
+                newPoint.identifier = _maze[testPoint.x - 1][testPoint.y];
+                _queTracker.push(newPoint);
+            }
+            // Down
+            if (testPoint.x + 1 < _rows && _maze[testPoint.x + 1][testPoint.y] != '@' &&
+                _maze[testPoint.x + 1][testPoint.y] != '#' && _maze[testPoint.x + 1][testPoint.y] != 'o')
+            {
+                point newPoint;
+                newPoint.x = testPoint.x + 1;
+                newPoint.y = testPoint.y;
+                newPoint.identifier = _maze[testPoint.x + 1][testPoint.y];
+                _queTracker.push(newPoint);
+            }
+        }
     }
 }
 

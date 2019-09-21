@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/clems/Documents/GitHub/262/Maze/main.cpp" "C:/Users/clems/Documents/GitHub/262/Maze/cmake-build-debug/CMakeFiles/code.dir/main.cpp.obj"
-  "C:/Users/clems/Documents/GitHub/262/Maze/maze_solver.cpp" "C:/Users/clems/Documents/GitHub/262/Maze/cmake-build-debug/CMakeFiles/code.dir/maze_solver.cpp.obj"
+  "/home/christian/262/Maze/main.cpp" "/home/christian/262/Maze/cmake-build-debug/CMakeFiles/code.dir/main.cpp.o"
+  "/home/christian/262/Maze/maze_solver.cpp" "/home/christian/262/Maze/cmake-build-debug/CMakeFiles/code.dir/maze_solver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

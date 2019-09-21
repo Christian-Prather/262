@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/clems/Documents/GitHub/262/Maze/maze_solver.cpp
+/home/christian/262/Maze/maze_solver.cpp
 maze_solver.h
-C:/Users/clems/Documents/GitHub/262/Maze/maze_solver.h
+/home/christian/262/Maze/maze_solver.h
 iostream
 -
 fstream
@@ -16,7 +16,7 @@ fstream
 string
 -
 
-C:/Users/clems/Documents/GitHub/262/Maze/maze_solver.h
+/home/christian/262/Maze/maze_solver.h
 iostream
 -
 vector

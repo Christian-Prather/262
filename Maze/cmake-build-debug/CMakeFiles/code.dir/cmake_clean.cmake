@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/code.dir/main.cpp.obj"
-  "CMakeFiles/code.dir/maze_solver.cpp.obj"
+  "CMakeFiles/code.dir/main.cpp.o"
+  "CMakeFiles/code.dir/maze_solver.cpp.o"
   "code.pdb"
-  "code.exe"
-  "code.exe.manifest"
-  "libcode.dll.a"
+  "code"
 )
 
 # Per-language clean rules from dependency scanning.
