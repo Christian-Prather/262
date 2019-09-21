@@ -12,16 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c1520aa-4c82-4160-9d3f-5aa827ffbe52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/262_Project_1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/262_Project_1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/personality_test.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/personality_test.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/proj1.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/262_Project_1.dir/proj1.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personality_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/personality_test.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personality_test.h" beforeDir="false" afterPath="$PROJECT_DIR$/personality_test.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/proj1.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +32,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/lab03/lab03" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunDashboard">
@@ -79,7 +70,8 @@
       <workItem from="1567735730096" duration="10655000" />
       <workItem from="1567792753860" duration="127000" />
       <workItem from="1567793269113" duration="158000" />
-      <workItem from="1567793989630" duration="11347000" />
+      <workItem from="1567793989630" duration="11883000" />
+      <workItem from="1567894451266" duration="80000" />
     </task>
     <servers />
   </component>
@@ -91,7 +83,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
