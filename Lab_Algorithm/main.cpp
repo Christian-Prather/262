@@ -39,7 +39,7 @@ int multiply (int a, int b)
     int multiplier = 0;
     int position = 1; // Skip the first element
 
-   while (integer != 1)
+    while (integer != 1)
     {
         integer = leftValue / 2;
         leftColumn.push_back(integer);

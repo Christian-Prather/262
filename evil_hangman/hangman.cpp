@@ -18,24 +18,21 @@ using namespace std;
 // constructor
 hangman::hangman()
 {
-    // TODO: Read in and store words from dictionary.txt
     ifstream dictionaryFile;
     dictionaryFile.open("dictionary.txt");
     string line;
-    if (dictionaryFile.is_open())
+    if (dictionaryFile.is_open()) // If file can be opened parse it in one line at a time
     {
 
-        while (getline(dictionaryFile, line))
+        while (getline(dictionaryFile, line)) // each word is a line
         {
-            _theWords[line.size()].push_back(line);
+            _theWords[line.size()].push_back(line); // use the word length as the key for the map and add it to the vector of strings for that given key
 
         }
-       // cout << "Dictionary Loaded....." << endl;
     }
     else
     {
         cout << "Error loading file" <<endl;
-        // TODO EXIT
     }
 
 
@@ -46,24 +43,22 @@ hangman::hangman()
 }
 int hangman::getWordsLeftAmount()
 {
-    return _currentList.size();
+    return _currentList.size(); //_currentlist is the vector of words being used at any moment in the code (master family)
 }
 void hangman::setWordLength(int length)
 {
-    _wordLength = length;
+    _wordLength = length; // Set private variable of wordlength for future reference
 }
 
-// start_new_game()
-//
-// Setup a new game of hangman.
+
 void hangman::start_new_game(int num_guesses) {
-    // TODO: Initialize game state variables
-    _totalGuesses = num_guesses;
-    _guessesRemaining = num_guesses;
-    _currentList = _theWords[_wordLength];
-    _wordPrint.clear();
-    _guessedChars = "";
-    for (int i = 0; i < _wordLength; i++)
+
+    _totalGuesses = num_guesses; // Total guesses allowed
+    _guessesRemaining = num_guesses; // Total guesses remaining (initialized to guesses allowed)
+    _currentList = _theWords[_wordLength]; // set the inital family to the list with wordlength key
+    _wordPrint.clear(); // Clear the display for multiple runs
+    _guessedChars = ""; // Clear gueesed letters for future runs
+    for (int i = 0; i < _wordLength; i++) // Build display string will be formatted later
     {
         _wordPrint.push_back('_');
 
@@ -72,26 +67,19 @@ void hangman::start_new_game(int num_guesses) {
 
 }
 
-
-// process_guess()
-//
-// Process a player's guess - should return true/false depending on whether
-// or not the guess was in the hidden word.  If the guess is incorrect, the
-// remaining guess count is decreased.
-
-bool inFam = false;
+bool inFam = false; // True if char is in a word in the family list
 bool hangman::process_guess(char c)
 {
-    notInFam.clear();
+    notInFam.clear(); // Clear temp list
     inFamList.clear();
-    _guessedChars = _guessedChars + c;
-    _guessesRemaining--;
-    for (string word : _currentList)
+    _guessedChars = _guessedChars + c; // Added guess to list of past guesses
+    _guessesRemaining--; // Remove guess number
+    for (string word : _currentList) // For every word in the list check if guess is letter in it
     {
         inFam = false;
         for (int i = 0; i < word.size(); i++)
         {
-            if (word[i] == c)
+            if (word[i] == c) // The guess is in a word in the family
             {
                 inFam = true;
                 break;
@@ -100,84 +88,70 @@ bool hangman::process_guess(char c)
         }
         if (inFam)
         {
-            inFamList.push_back(word);
+            inFamList.push_back(word); // Add the current word to a temp list of words that have the guessed letter
         }
         else
         {
-            notInFam.push_back(word);
+            notInFam.push_back(word); // Add current word to temp list of words that dont have the guess in it
         }
     }
-
-//    for (string word : notInFam)
-//    {
-//        cout << word << " ";
-//
-//    } cout << "#############################" << endl;
-//    for (string word : inFamList)
-//    {
-//        cout << word << " ";
-//    }
-    if (notInFam.size() > 0)
+    if (notInFam.size() > 0) // If there is the option to use a word without the user guess than set the list to them
     {
         _currentList = notInFam;
-        return false;
+        return false; // Say the guess was not in the word
     }
     else
     {
         // Find which poition of correct guess will give me the most options
         map <int, vector<string>> tempMap;
 
-        for (string word : inFamList)
+        for (string word : inFamList) // Loop through each word in the mathcing list
         {
             for (int i = 0; i < word.size(); i++)
             {
-                if (word[i] == c)
+                if (word[i] == c) // find where the guess is in the word
                 {
-                    tempMap[i].push_back(word);
+                    tempMap[i].push_back(word); // use the index of mathc as key to build keys with all the words that have a guess in that spot
                     break;
                 }
             }
         }
         int maxCount = 0;
 
-        map<int, vector<string>>::iterator robbin = tempMap.begin();
+        map<int, vector<string>>::iterator robbin = tempMap.begin(); // Tmep map iterator used to loop through all keys in tempMap an find the longest list (most options)
         while (robbin != tempMap.end())
         {
             if (robbin->second.size() > maxCount)
             {
-                maxCount = robbin->second.size();
-                _currentList = robbin->second;
+                maxCount = robbin->second.size(); // New max count
+                _currentList = robbin->second; // Update currently used list
             }
             robbin++;
         }
-        // Grab random word from list for sidplay inidices (not effiecnt)
+        // Grab random word from list for displaying indiices (not effiecnt)
         string tempWord = _currentList[0];
         for (int j =0; j < tempWord.size(); j ++)
         {
             if (c == tempWord[j])
             {
-                _wordPrint[j] = c;
+                _wordPrint[j] = c; // Makes display string updated version
             }
         }
 
-        //_currentList = inFamList;
         return true;
     }
 }
 
 
-// get_display_word()
-//
-// Return a representation of the hidden word, with unguessed letters
-// masked by '-' characters.
+
 string hangman::get_display_word()
 {
     string tempString = "";
-    for (int i = 0; i < _wordPrint.size() -1; i++)
+    for (int i = 0; i < _wordPrint.size() -1; i++) // Need to pad display word with spaces
     {
         tempString = tempString + _wordPrint[i] + " ";
     }
-    tempString = tempString + _wordPrint[_wordPrint.size() -1];
+    tempString = tempString + _wordPrint[_wordPrint.size() -1]; // Dont pad last space
     return tempString;
 }
 
@@ -205,7 +179,7 @@ string hangman::get_guessed_chars()
 // Return true if letter was already guessed.
 bool hangman::was_char_guessed(char c)
 {
-    for (char letter : _guessedChars)
+    for (char letter : _guessedChars) // Loop through string of guessed letters and see if current guess is in it
     {
         if (c == letter)
         {
@@ -221,7 +195,7 @@ bool hangman::was_char_guessed(char c)
 // Return true if the game has been won by the player.
 bool hangman::is_won()
 {
-    for (char letter : _wordPrint)
+    for (char letter : _wordPrint) // Check if there is still a blank letter to guess if not you won (not a fan of this but couldnt think of a better way
     {
         if (letter == '_')
         {
@@ -237,7 +211,7 @@ bool hangman::is_won()
 // Return true if the game has been lost.
 bool hangman::is_lost()
 {
-    return _guessesRemaining == 0;
+    return _guessesRemaining == 0; // Check if there are no guesses left
 }
 
 
@@ -245,7 +219,7 @@ bool hangman::is_lost()
 //
 // Return the true hidden word to show the player.
 string hangman::get_hidden_word() {
-    return _currentList[0];
+    return _currentList[0]; // Pick first word from current list as "the word"
 }
 
 

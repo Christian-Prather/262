@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/clems/Documents/GitHub/262/Lab_7c/lab07c.cpp
+iostream
+-
+fstream
+-
+string
+-
+map
+-
+vector
+-
+cmath
+-
+

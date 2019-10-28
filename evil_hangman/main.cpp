@@ -34,19 +34,18 @@ int main() {
     
     // Keep playing the game until the user decides otherwise
     while (true) {      
-        // TODO: prompt user for length of word, reprompting if invalid word length
-        bool isValidLength = false;
-        int wordLength;
-        while (!isValidLength)
+
+        bool isValidLength = false; // Variable for checking length state
+        int wordLength; // Length of word
+        while (!isValidLength) // Keep prompting unitl its a correct length
         {
             cout << "How long a word would you like" <<endl;
             cin >> wordLength;
-            if (game._theWords.find(wordLength) != game._theWords.end())
+            if (game._theWords.find(wordLength) != game._theWords.end()) // Use key of map to see if there is a vector of words of selected length
             {
-                isValidLength = true;
-                game.setWordLength(wordLength);
+                isValidLength = true; // Exit loop
+                game.setWordLength(wordLength); // Set privaate variable to word length for future reference
 
-              //  cout << "Valid length" <<endl;
             }
 
         }
@@ -55,31 +54,25 @@ int main() {
 
         int num_guesses = get_integer("How many guesses would you like?");
         cout << endl;
-
-        // TODO: prompt user to decide whether or not they want to see how many words
-        // remain possible for the current display word and previous guesses
-
         cout << "Would you like to see how many words remain in the list like a chile would?...(y/n)" << endl;
-        bool seeList = false;
+        bool seeList = false; // State for determining if you want to see word list length
         char userInput;
         cin >> userInput;
-        if (userInput == 'y')
+        if (towlower(userInput) == 'y')
         {
             seeList = true;
         }
 
 
-        // TODO: rewrite the line below to start a new game with the additional info
-        // prompted for above
-        game.start_new_game(num_guesses);
+       game.start_new_game(num_guesses); // Initialize variable states
 
         while (!game.is_won() && !game.is_lost()) {
 
-            if (seeList)
+            if (seeList) // Display debug info or not
             {
-                cout << "You have " << game.getWordsLeftAmount() << " words left" << endl;
+                cout << "You have " << game.getWordsLeftAmount() << " words left" << endl; // Get provate variable words left
             }
-            cout << "Your word is: " << game.get_display_word() << endl;
+            cout << "Your word is: " << game.get_display_word() << endl; // Display interface
 
             string already_guessed = game.get_guessed_chars();
             if (already_guessed.size() == 0) {

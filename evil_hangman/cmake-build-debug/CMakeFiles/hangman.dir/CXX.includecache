@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/christian/Desktop/evil_hangman/hangman.h
+C:/Users/clems/Documents/GitHub/262/evil_hangman/hangman.cpp
+hangman.h
+C:/Users/clems/Documents/GitHub/262/evil_hangman/hangman.h
+
+C:/Users/clems/Documents/GitHub/262/evil_hangman/hangman.h
 string
 -
 map
@@ -18,7 +22,7 @@ iostream
 fstream
 -
 
-/home/christian/Desktop/evil_hangman/main.cpp
+C:/Users/clems/Documents/GitHub/262/evil_hangman/main.cpp
 iostream
 -
 string
@@ -28,5 +32,5 @@ cstdlib
 cctype
 -
 hangman.h
-/home/christian/Desktop/evil_hangman/hangman.h
+C:/Users/clems/Documents/GitHub/262/evil_hangman/hangman.h
 

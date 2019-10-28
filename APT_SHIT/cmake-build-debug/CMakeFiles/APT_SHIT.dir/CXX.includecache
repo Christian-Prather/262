@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/clems/Documents/GitHub/262/APT_SHIT/main.cpp
+iostream
+-
+vector
+-
+string
+-
+algorithm
+-
+map
+-
+vector
+-
+string
+-
+set
+-
+
