@@ -1,4 +1,4 @@
-# Install script for directory: /home/christian/Downloads/lab05
+# Install script for directory: /home/christian/262/Lab_5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/christian/Downloads/lab05/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/christian/262/Lab_5/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

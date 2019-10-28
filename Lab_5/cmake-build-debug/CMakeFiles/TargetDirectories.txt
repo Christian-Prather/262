@@ -1,3 +1,3 @@
-/home/christian/Downloads/lab05/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/christian/Downloads/lab05/cmake-build-debug/CMakeFiles/mondrian.dir
-/home/christian/Downloads/lab05/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/christian/262/Lab_5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/christian/262/Lab_5/cmake-build-debug/CMakeFiles/mondrian.dir
+/home/christian/262/Lab_5/cmake-build-debug/CMakeFiles/edit_cache.dir

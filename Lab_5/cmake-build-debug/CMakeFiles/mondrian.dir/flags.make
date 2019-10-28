@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/christian/Downloads/lab05/. 
+CXX_INCLUDES = -I/home/christian/262/Lab_5/. 
 

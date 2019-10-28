@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/christian/Downloads/lab05/lodepng.cpp" "/home/christian/Downloads/lab05/cmake-build-debug/CMakeFiles/mondrian.dir/lodepng.cpp.o"
-  "/home/christian/Downloads/lab05/main.cpp" "/home/christian/Downloads/lab05/cmake-build-debug/CMakeFiles/mondrian.dir/main.cpp.o"
-  "/home/christian/Downloads/lab05/mondrian.cpp" "/home/christian/Downloads/lab05/cmake-build-debug/CMakeFiles/mondrian.dir/mondrian.cpp.o"
-  "/home/christian/Downloads/lab05/picture.cpp" "/home/christian/Downloads/lab05/cmake-build-debug/CMakeFiles/mondrian.dir/picture.cpp.o"
+  "/home/christian/262/Lab_5/lodepng.cpp" "/home/christian/262/Lab_5/cmake-build-debug/CMakeFiles/mondrian.dir/lodepng.cpp.o"
+  "/home/christian/262/Lab_5/main.cpp" "/home/christian/262/Lab_5/cmake-build-debug/CMakeFiles/mondrian.dir/main.cpp.o"
+  "/home/christian/262/Lab_5/mondrian.cpp" "/home/christian/262/Lab_5/cmake-build-debug/CMakeFiles/mondrian.dir/mondrian.cpp.o"
+  "/home/christian/262/Lab_5/picture.cpp" "/home/christian/262/Lab_5/cmake-build-debug/CMakeFiles/mondrian.dir/picture.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

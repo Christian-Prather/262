@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/christian/Downloads/lab05/lodepng.h
+/home/christian/262/Lab_5/lodepng.h
 string.h
 -
 vector
@@ -14,29 +14,29 @@ vector
 string
 -
 lodepng.h
-/home/christian/Downloads/lab05/lodepng.h
+/home/christian/262/Lab_5/lodepng.h
 iostream
 -
 lodepng.h
-/home/christian/Downloads/lab05/lodepng.h
+/home/christian/262/Lab_5/lodepng.h
 
-/home/christian/Downloads/lab05/mondrian.cpp
+/home/christian/262/Lab_5/mondrian.cpp
 cstdlib
 -
 ctime
 -
 mondrian.h
-/home/christian/Downloads/lab05/mondrian.h
+/home/christian/262/Lab_5/mondrian.h
 
-/home/christian/Downloads/lab05/mondrian.h
+/home/christian/262/Lab_5/mondrian.h
 string
 -
 picture.h
-/home/christian/Downloads/lab05/picture.h
+/home/christian/262/Lab_5/picture.h
 
-/home/christian/Downloads/lab05/picture.h
+/home/christian/262/Lab_5/picture.h
 lodepng.h
-/home/christian/Downloads/lab05/lodepng.h
+/home/christian/262/Lab_5/lodepng.h
 string
 -
 vector

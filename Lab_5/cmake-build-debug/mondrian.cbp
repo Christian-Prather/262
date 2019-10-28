@@ -8,33 +8,33 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/christian/Downloads/lab05/cmake-build-debug"/>
+				<Option working_dir="/home/christian/262/Lab_5/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/christian/Downloads/lab05/cmake-build-debug"/>
+				<Option working_dir="/home/christian/262/Lab_5/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="mondrian">
-				<Option output="/home/christian/Downloads/lab05/cmake-build-debug/mondrian" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/christian/Downloads/lab05/cmake-build-debug"/>
+				<Option output="/home/christian/262/Lab_5/cmake-build-debug/mondrian" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/christian/262/Lab_5/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/christian/Downloads/lab05/."/>
+					<Add directory="/home/christian/262/Lab_5/."/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -45,20 +45,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 mondrian"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 mondrian"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="mondrian/fast">
-				<Option output="/home/christian/Downloads/lab05/cmake-build-debug/mondrian" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/christian/Downloads/lab05/cmake-build-debug"/>
+				<Option output="/home/christian/262/Lab_5/cmake-build-debug/mondrian" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/christian/262/Lab_5/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/christian/Downloads/lab05/."/>
+					<Add directory="/home/christian/262/Lab_5/."/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -69,45 +69,45 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 mondrian/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 mondrian/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/christian/Downloads/lab05/cmake-build-debug"/>
+				<Option working_dir="/home/christian/262/Lab_5/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/Downloads/lab05/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/christian/262/Lab_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/christian/Downloads/lab05/lodepng.cpp">
+		<Unit filename="/home/christian/262/Lab_5/lodepng.cpp">
 			<Option target="mondrian"/>
 		</Unit>
-		<Unit filename="/home/christian/Downloads/lab05/lodepng.h">
+		<Unit filename="/home/christian/262/Lab_5/lodepng.h">
 			<Option target="mondrian"/>
 		</Unit>
-		<Unit filename="/home/christian/Downloads/lab05/main.cpp">
+		<Unit filename="/home/christian/262/Lab_5/main.cpp">
 			<Option target="mondrian"/>
 		</Unit>
-		<Unit filename="/home/christian/Downloads/lab05/mondrian.cpp">
+		<Unit filename="/home/christian/262/Lab_5/mondrian.cpp">
 			<Option target="mondrian"/>
 		</Unit>
-		<Unit filename="/home/christian/Downloads/lab05/mondrian.h">
+		<Unit filename="/home/christian/262/Lab_5/mondrian.h">
 			<Option target="mondrian"/>
 		</Unit>
-		<Unit filename="/home/christian/Downloads/lab05/picture.cpp">
+		<Unit filename="/home/christian/262/Lab_5/picture.cpp">
 			<Option target="mondrian"/>
 		</Unit>
-		<Unit filename="/home/christian/Downloads/lab05/picture.h">
+		<Unit filename="/home/christian/262/Lab_5/picture.h">
 			<Option target="mondrian"/>
 		</Unit>
-		<Unit filename="/home/christian/Downloads/lab05/CMakeLists.txt">
+		<Unit filename="/home/christian/262/Lab_5/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
