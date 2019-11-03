@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/clems/Documents/GitHub/262/Ques_Part1/Queue.cpp
+Queue.h
+C:/Users/clems/Documents/GitHub/262/Ques_Part1/Queue.h
+
+C:/Users/clems/Documents/GitHub/262/Ques_Part1/Queue.h
+cstdlib
+-
+

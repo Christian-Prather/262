@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/clems/Documents/GitHub/262/Markov/code/map_model.cpp
+map_model.h
+C:/Users/clems/Documents/GitHub/262/Markov/code/map_model.h
+
+C:/Users/clems/Documents/GitHub/262/Markov/code/map_model.h
+string
+-
+vector
+-
+map
+-
+iostream
+-
+model.h
+C:/Users/clems/Documents/GitHub/262/Markov/code/model.h
+
+C:/Users/clems/Documents/GitHub/262/Markov/code/model.h
+string
+-
+
