@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/clems/Documents/GitHub/262/Lab_overload/clock_time.h
+ostream
+-
+string
+-
+iostream
+-
+sstream
+-
+iomanip
+-
+
+C:/Users/clems/Documents/GitHub/262/Lab_overload/main.cpp
+string
+-
+iostream
+-
+iomanip
+-
+sstream
+-
+clock_time.h
+C:/Users/clems/Documents/GitHub/262/Lab_overload/clock_time.h
+

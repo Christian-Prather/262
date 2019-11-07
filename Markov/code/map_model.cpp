@@ -10,21 +10,21 @@
 
 
 void map_model::initialize(string text, int order) {
-    // TODO: Implement me
+    // Set variables need for later
     _order = order;
     _text = text;
-    int diff;
+    int diff; // used to see if I need to loop back to the first
     string key;
     char value;
     for (int index = 0; index < text.length(); index ++)
     {
+        // Check if need to loop around (crcular)
         if ((index + order )> text.length())
         {
            diff = (index + order) - text.length();
            key = text.substr(index, order - diff);
             key = key + text.substr(0,diff);
             value = text[diff];
-            //continue;
         }
         else
         {
@@ -34,21 +34,19 @@ void map_model::initialize(string text, int order) {
         myMap[key].push_back(value);
     }
 
-    cout << "Break" << endl;
 
 }
 
 string map_model::generate(int size) {
-    // TODO: Implement me
     string generated = "";
     // pick random k-character substring as initial seed
     int start = rand() % (_text.length() - _order);
     string seed = _text.substr(start, _order);
-    //return "the fox jumped over the moon";
     vector<char> options;
     for (int i = 0; i < size; i++)
     {
         options = myMap[seed];
+        // Grab random char from vector of options
         char nextChar = options[rand() % options.size()];
         generated = generated + nextChar;
         seed = seed.substr(1) + nextChar;

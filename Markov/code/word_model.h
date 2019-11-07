@@ -8,7 +8,10 @@
 #ifndef _WORD_MODEL_H
 #define _WORD_MODEL_H
 
+#include <vector>
+#include <map>
 #include "model.h"
+#include <iostream>
 
 using namespace std;
 
@@ -19,9 +22,12 @@ public:
     virtual string generate(int size);
 
     // Add any helper methods you want here
+    map <string, vector<string>> myMap;
 
 protected:
     // Add any variables you may need here
+    int _order;
+    string _text;
 };
 
 #endif

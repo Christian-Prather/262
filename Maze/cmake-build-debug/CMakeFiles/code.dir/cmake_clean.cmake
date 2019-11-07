@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/code.dir/main.cpp.obj"
   "CMakeFiles/code.dir/maze_solver.cpp.obj"
-  "code.pdb"
   "code.exe"
   "code.exe.manifest"
+  "code.pdb"
   "libcode.dll.a"
 )
 

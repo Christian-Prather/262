@@ -14,6 +14,7 @@
 #include "markov.h"
 #include "brute_model.h"
 #include "map_model.h"
+#include "word_model.h"
 
 // TODO: add includes for your models
 
@@ -32,7 +33,7 @@ using namespace std;
 markov::markov() {
 	_model_map.emplace("brute", new brute_model);
 	 _model_map.emplace("map", new map_model);
-	// _model_map.emplace("word", new word_model);
+	 _model_map.emplace("word", new word_model);
 }
 
 // ~markov()

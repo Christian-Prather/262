@@ -18,6 +18,7 @@ CMakeFiles/Markov.dir/code/markov.cpp.obj: ../code/map_model.h
 CMakeFiles/Markov.dir/code/markov.cpp.obj: ../code/markov.cpp
 CMakeFiles/Markov.dir/code/markov.cpp.obj: ../code/markov.h
 CMakeFiles/Markov.dir/code/markov.cpp.obj: ../code/model.h
+CMakeFiles/Markov.dir/code/markov.cpp.obj: ../code/word_model.h
 
 CMakeFiles/Markov.dir/code/word_model.cpp.obj: ../code/model.h
 CMakeFiles/Markov.dir/code/word_model.cpp.obj: ../code/word_model.cpp
