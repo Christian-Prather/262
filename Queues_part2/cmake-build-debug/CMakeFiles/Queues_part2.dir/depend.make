@@ -5,6 +5,6 @@ CMakeFiles/Queues_part2.dir/Queue.cpp.obj: ../Queue.cpp
 CMakeFiles/Queues_part2.dir/Queue.cpp.obj: ../Queue.h
 
 CMakeFiles/Queues_part2.dir/tests.cpp.obj: ../Queue.h
-CMakeFiles/Queues_part2.dir/tests.cpp.obj: ../test_no_template.h
+CMakeFiles/Queues_part2.dir/tests.cpp.obj: ../test_with_template.h
 CMakeFiles/Queues_part2.dir/tests.cpp.obj: ../tests.cpp
 

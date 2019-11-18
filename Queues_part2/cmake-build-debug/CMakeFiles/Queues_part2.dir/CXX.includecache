@@ -6,13 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/clems/Documents/GitHub/262/Queues_part2/Queue.cpp
-Queue.h
-C:/Users/clems/Documents/GitHub/262/Queues_part2/Queue.h
-iostream
--
-
 C:/Users/clems/Documents/GitHub/262/Queues_part2/Queue.h
 cstdlib
 -
+
+C:/Users/clems/Documents/GitHub/262/Queues_part2/test_with_template.h
+string
+-
+iostream
+-
+Queue.h
+C:/Users/clems/Documents/GitHub/262/Queues_part2/Queue.h
+
+C:/Users/clems/Documents/GitHub/262/Queues_part2/tests.cpp
+test_with_template.h
+C:/Users/clems/Documents/GitHub/262/Queues_part2/test_with_template.h
 
