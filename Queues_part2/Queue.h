@@ -22,7 +22,7 @@ public:
 
 	Queue() {
         _front = 0; _back = 0; _size = 0;
-	    _QUESIZE = 10;
+	    _QUESIZE = 5;
 	    _data = new T[_QUESIZE]; }
 
 	bool enqueue(char c);
@@ -43,22 +43,15 @@ private:
 };
 
 template <class T>
-bool Queue<T>::enqueue(char c) {
-//    std::cout << (int)c <<std::endl;
-
-//if(_size == 99999)
-//{
-//    std::cout << "9";
-//}
+bool Queue<T>::enqueue(char c)
+{
     if (_size == _QUESIZE)
     {
-///////////////////////////////////////////////////////////////////////
         T* tmpArray = new T[_QUESIZE * 2];
-     //   T tmp[_QUESIZE+1];
-        for (int i = 0; i < _QUESIZE; i ++)
+        for (int i = 0; !is_empty(); i ++) //IS EMPTY!!!
         {
          //   tmp[i] = this->front();
-            tmpArray[i] = this->front();
+            tmpArray[i] = _data[_front];
             this->dequeue();
 
         }
@@ -68,13 +61,12 @@ bool Queue<T>::enqueue(char c) {
         //tmp[_QUESIZE] = c;
 
         _data = tmpArray;
-        _QUESIZE++;
-        _size = _QUESIZE;
+        _QUESIZE = _QUESIZE * 2;
+        _back = (_QUESIZE /2) + 1;
+        _size = _back;
         _front = 0;
-        _back  = _size;
 
         return true;
-        //return false;
     }
     else
     {
@@ -102,8 +94,6 @@ template <class T>
 char Queue<T>::front()
 {
 
-    //   std::cout << (int)_data[_front] << std::endl;
-
     return  _data[_front];
 }
 template <class T>
@@ -129,8 +119,6 @@ Queue<T>::Queue(Queue<T> &a)
     _QUESIZE = a._QUESIZE;
     _front = a._front;
     _back = a._back;
-
-
 
 }
 
